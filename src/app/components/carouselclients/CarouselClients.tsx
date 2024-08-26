@@ -1,19 +1,15 @@
 import { useState } from "react";
 import Slider, { Settings } from "react-slick";
-import devstiven from "../../assets/img/clients/devstiven.png";
-import codeleo from "../../assets/img/clients/codeleo.png";
-import porfolio from "../../assets/img/clients/portfolio.png";
 import ArrowRight from "../arrowright/ArrowRight";
 import ArrowLeft from "../arrowleft/ArrowLeft";
 
-// Define the images and their corresponding links
 const images = [
-  { img: devstiven, link: "https://devstiven.netlify.app/" },
-  { img: codeleo, link: "https://codeleo.vercel.app/" },
-  { img: porfolio, link: "https://example.com/porfolio" },
-  { img: devstiven, link: "https://devstiven.netlify.app/" },
-  { img: codeleo, link: "https://codeleo.vercel.app/" },
-  { img: porfolio, link: "https://example.com/porfolio" },
+  { img: "devstiven", link: "https://devstiven.netlify.app/" },
+  { img: "codeleo", link: "https://codeleo.vercel.app/" },
+  { img: "leon", link: "https://github.com/Leon-Flor" },
+  { img: "devstiven", link: "https://devstiven.netlify.app/" },
+  { img: "codeleo", link: "https://codeleo.vercel.app/" },
+  { img: "leon", link: "https://github.com/Leon-Flor" },
 ];
 
 export default function CarouselClients() {
@@ -22,7 +18,7 @@ export default function CarouselClients() {
   const settings: Settings = {
     infinite: true,
     lazyLoad: "ondemand",
-    speed: 1000,
+    speed: 300,
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
@@ -35,7 +31,7 @@ export default function CarouselClients() {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
           centerPadding: "0px",
         },
@@ -44,7 +40,7 @@ export default function CarouselClients() {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2,
           infinite: true,
           centerPadding: "0px",
@@ -63,7 +59,7 @@ export default function CarouselClients() {
   };
 
   return (
-    <div className="pt-20">
+    <section className="py-32">
       <Slider {...settings} draggable={false}>
         {images.map((item, idx) => (
           <div
@@ -100,8 +96,11 @@ export default function CarouselClients() {
                   <div className="tracker tr-25"></div>
                   <div id="card">
                     <img
-                      className="rounded-3xl"
-                      src={item.img}
+                      className="rounded-xl"
+                      src={`${import.meta.env.VITE_DIST_IMGS}/clients/${
+                        item.img
+                      }.webp`}
+                      loading="lazy"
                       alt={`Slide ${idx}`}
                     />
                   </div>
@@ -111,6 +110,6 @@ export default function CarouselClients() {
           </div>
         ))}
       </Slider>
-    </div>
+    </section>
   );
 }

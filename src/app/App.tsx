@@ -1,11 +1,6 @@
-import { useState, useEffect } from "react";
-import { Hidden } from "@mui/material";
+import { lazy, Suspense } from "react";
 import Clients from "./sections/clients/Clients";
 import Header from "./components/header/Header";
-import Home from "./sections/home/Home";
-import Services from "./sections/services/Services";
-import About from "./sections/about/About";
-import Footer from "./components/footer/Footer";
 import SmallHeader from "./components/smallheader/SmallHeader";
 import ScrollAnimation from "./components/scrollanimation/ScrollAnimation";
 import Loading from "./components/loading/Loading";
@@ -13,39 +8,35 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./App.css";
+import { useDevices } from "./utils";
 
-function App() {
-  const [isLoading, setIsLoading] = useState(true);
+const Home = lazy(() => import("./sections/home/Home"));
+const Services = lazy(() => import("./sections/services/Services"));
+const About = lazy(() => import("./sections/about/About"));
+const Footer = lazy(() => import("./components/footer/Footer"));
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <Loading />;
-  }
+export default function App() {
+  const { isMobile } = useDevices();
 
   return (
     <div className="background-dgtaliza">
-      <Hidden mdDown>
-        <Header />
-      </Hidden>
-      <Hidden mdUp>
-        <SmallHeader />
-      </Hidden>
+      {isMobile ? <SmallHeader /> : <Header />}
+
       <ScrollAnimation>
-        <Home />
-        <Services />
-        <Clients />
-        <About />
-        <Footer />
+        <Suspense key="home" fallback={<Loading />}>
+          <Home />
+        </Suspense>
+        <Suspense key="services" fallback={<Loading />}>
+          <Services />
+        </Suspense>
+        <Suspense key="clients" fallback={<Loading />}>
+          <Clients />
+        </Suspense>
+        <Suspense key="about" fallback={<Loading />}>
+          <About />
+        </Suspense>
       </ScrollAnimation>
+      <Footer />
     </div>
   );
 }
-
-export default App;

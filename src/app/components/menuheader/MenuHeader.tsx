@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Button, Drawer, IconButton, Paper } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import logoWhite from "../../assets/img/logo-dgtaliza-white.png";
@@ -8,7 +9,7 @@ interface MenuDrawerProps {
   toggleMenuDrawer: () => void;
 }
 
-export default function MenuDrawer({
+export default memo(function MenuDrawer({
   open,
   toggleMenuDrawer,
 }: MenuDrawerProps) {
@@ -19,10 +20,16 @@ export default function MenuDrawer({
           width: 320,
           height: "100%",
           borderRadius: 0,
-          padding: 2
+          padding: 2,
         }}
       >
-        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 16 }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            marginBottom: 16,
+          }}
+        >
           <div>
             <img src={logoBlack} alt="logo" />
           </div>
@@ -34,7 +41,7 @@ export default function MenuDrawer({
           <Button
             sx={{
               color: "black",
-          
+
               fontSize: 16,
             }}
             href="#home"
@@ -51,7 +58,7 @@ export default function MenuDrawer({
           <Button
             sx={{
               color: "black",
-          
+
               fontSize: 16,
             }}
             href="#services"
@@ -68,7 +75,7 @@ export default function MenuDrawer({
           <Button
             sx={{
               color: "black",
-          
+
               fontSize: 16,
             }}
             href="#about"
@@ -85,7 +92,7 @@ export default function MenuDrawer({
           <Button
             sx={{
               color: "black",
-          
+
               fontSize: 16,
             }}
             href="#about"
@@ -102,7 +109,7 @@ export default function MenuDrawer({
           <Button
             sx={{
               color: "black",
-          
+
               fontSize: 16,
             }}
             href="#contact"
@@ -116,4 +123,4 @@ export default function MenuDrawer({
       </Paper>
     </Drawer>
   );
-}
+});

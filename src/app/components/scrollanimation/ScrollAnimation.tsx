@@ -1,4 +1,4 @@
-import { useEffect, ReactNode } from "react";
+import { useEffect, ReactNode, memo } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -6,7 +6,9 @@ interface ScrollAnimationProps {
   children: ReactNode;
 }
 
-export default function ScrollAnimation({ children }: ScrollAnimationProps) {
+export default memo(function ScrollAnimation({
+  children,
+}: ScrollAnimationProps) {
   useEffect(() => {
     AOS.init({
       disable: false,
@@ -27,5 +29,5 @@ export default function ScrollAnimation({ children }: ScrollAnimationProps) {
     });
   }, []);
 
-  return <div>{children}</div>;
-}
+  return <>{children}</>;
+});

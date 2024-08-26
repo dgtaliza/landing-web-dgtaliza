@@ -1,6 +1,7 @@
+import { memo } from "react";
 import logoWhite from "../../assets/img/logo-dgtaliza-white.png";
 
-export default function Footer() {
+export default memo(function Footer() {
   return (
     <div className="px-8 xl:px-40 py-20 flex flex-col xl:flex-row justify-between xl:items-start gap-10">
       <div className="flex flex-col items-start">
@@ -52,4 +53,4 @@ export default function Footer() {
       </div>
     </div>
   );
-}
+});

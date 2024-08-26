@@ -1,8 +1,9 @@
+import { memo } from "react";
 import { Typography } from "@mui/material";
 import CarouselAbout from "../../components/carouselabout/CarouselAbout";
 import arrowButtonIcon from "../../assets/svg/arrow-button.svg";
 
-export default function About() {
+export default memo(function About() {
   return (
     <div id="about" className="py-20">
       <div className="flex flex-col xl:flex-row justify-between items-center">
@@ -37,4 +38,4 @@ export default function About() {
       </div>
     </div>
   );
-}
+});

@@ -3,15 +3,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
-import experiencie from "../../assets/img/about/experiencie.png";
-import inovation from "../../assets/img/about/inovation.png";
-import support from "../../assets/img/about/support.png";
-import quality from "../../assets/img/about/quality.png";
 
 const storiesData = [
   {
     id: 1,
-    image: experiencie,
+    image: "experiencie",
     backgroundColorType: "#6588FE",
     title: "Experiencia",
     description:
@@ -19,7 +15,7 @@ const storiesData = [
   },
   {
     id: 2,
-    image: inovation,
+    image: "inovation",
     backgroundColorType: "#E7CD45",
     title: "Innovación",
     description:
@@ -27,7 +23,7 @@ const storiesData = [
   },
   {
     id: 3,
-    image: quality,
+    image: "quality",
     backgroundColorType: "#52D9EF",
     title: "Calidad",
     description:
@@ -35,7 +31,7 @@ const storiesData = [
   },
   {
     id: 4,
-    image: support,
+    image: "support",
     backgroundColorType: "#6588FE",
     title: "Soporte",
     description:
@@ -48,7 +44,7 @@ export default function CarouselAbout() {
     <Swiper
       slidesPerView={3}
       spaceBetween={10}
-      speed={2000}
+      speed={300}
       navigation
       loop
       autoplay
@@ -84,8 +80,11 @@ export default function CarouselAbout() {
                   style={{ backgroundColor: item.backgroundColorType }}
                 >
                   <img
-                    className="w-20 md:w-40 mb-10 rounded-t-lg object-cover object-center brightness-75"
-                    src={item.image}
+                    className="w-20 md:w-40 mb-10 rounded-t-lg object-cover object-center "
+                    src={`${import.meta.env.VITE_DIST_IMGS}/about/${
+                      item.image
+                    }.webp`}
+                    loading="lazy"
                     alt="image"
                   />
                 </div>
