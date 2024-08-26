@@ -18,14 +18,17 @@ jobs:
         with:
           node-version: '18' # Especifica la versión de Node.js que usas
 
+      - name: Install Yarn
+        run: npm install -g yarn  # Instala Yarn globalmente
+
       - name: Install dependencies
-        run: yarn install
+        run: yarn install  # Instala las dependencias del proyecto
 
       - name: Build project
-        run: yarn build
+        run: yarn build  # Construye el proyecto
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Token para acceder a GitHub
+          publish_dir: ./dist  # Directorio con los archivos de construcción
