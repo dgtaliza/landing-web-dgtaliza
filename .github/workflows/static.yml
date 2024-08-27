@@ -1,0 +1,29 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Cambia 'main' si tu rama principal tiene otro nombre
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Especifica la versión de Node.js que usas
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build and Deploy
+        run: |
+          yarn predeploy  # Este paso construye el proyecto
+          yarn deploy     # Este paso usa gh-pages para desplegar
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
