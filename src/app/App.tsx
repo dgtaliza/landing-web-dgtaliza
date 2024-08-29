@@ -30,7 +30,7 @@ function App() {
   }
 
   return (
-    <div className="background-dgtaliza">
+    <div className="bg-main">
       <Hidden mdDown>
         <Header />
       </Hidden>

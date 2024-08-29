@@ -16,25 +16,25 @@ export default function Footer() {
         </h2>
         <a
           href="#home"
-          className="text-base hover:text-[#F5F7FA] transition text-white pt-8"
+          className="text-base  hover:text-[#719EFF] duration-300 transition text-white pt-8"
         >
           <span className="font-sans">Inicio</span>
         </a>
         <a
           href="#services"
-          className="text-base hover:text-[#F5F7FA] transition text-white pt-4"
+          className="text-base  hover:text-[#719EFF] duration-300 transition text-white pt-4"
         >
           <span className="font-sans">Servicios</span>
         </a>
         <a
           href="#clients"
-          className="text-base hover:text-[#F5F7FA] transition text-white pt-4"
+          className="text-base  hover:text-[#719EFF] duration-300 transition text-white pt-4"
         >
           <span className="font-sans">Clientes</span>
         </a>
         <a
           href="#about"
-          className="text-base hover:text-[#F5F7FA] transition text-white pt-4"
+          className="text-base  hover:text-[#719EFF] duration-300 transition text-white pt-4"
         >
           <span className="font-sans">Nosotros</span>
         </a>
@@ -44,10 +44,10 @@ export default function Footer() {
           Escríbenos
         </h2>
         <a
-          href="mailto:contacto.dgitaliza@gmail.com"
+          href="mailto:info@dgtaliza.com"
           className="text-white pt-8 hover:underline"
         >
-          <span className="font-sans">contacto.dgitaliza@gmail.com</span>
+          <span className="font-sans">info@dgtaliza.com</span>
         </a>
       </div>
     </div>

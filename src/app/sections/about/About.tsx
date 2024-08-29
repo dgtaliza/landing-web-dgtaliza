@@ -6,7 +6,7 @@ export default function About() {
   return (
     <div id="about" className="py-20">
       <div className="flex flex-col xl:flex-row justify-between items-center">
-        <div className="flex flex-col items-center xl:items-start gap-4 w-full md:w-11/12 xl:w-[60%] pl-8 pr-8 md:pl-0 md:pr-0 lg:pl-20 lg:pr-20 xl:pl-40 xl:pr-0">
+        <div className="flex flex-col items-center xl:items-start gap-4 w-full md:w-11/12 xl:w-[60%] pl-8 pr-8 md:pl-0 md:pr-0 lg:pl-20 lg:pr-20 xl:pl-32 xl:pr-0">
           <h2 className="text-2xl md:text-4xl text-white uppercase font-extrabold text-center xl:text-left">
             Estamos aquí para desarrollar tu próximo proyecto
           </h2>
@@ -29,7 +29,7 @@ export default function About() {
         <a
           href="https://api.whatsapp.com/send?phone=573225331967"
           target="_blank"
-          className="flex items-center gap-2 text-base text-white font-bold uppercase bg-[#719EFF] border border-[#719EFF] hover:border-white hover:bg-transparent px-8 py-4 mt-8 rounded-md transition"
+          className="flex flex-row items-center gap-2 text-base text-white font-bold uppercase bg-[#719EFF] border border-[#719EFF] hover:border-white hover:bg-transparent px-8 py-4 mt-8 rounded-md transition duration-300"
         >
           Contáctanos
           <img src={arrowButtonIcon} alt="arrow" />
