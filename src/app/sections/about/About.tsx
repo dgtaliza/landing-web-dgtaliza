@@ -10,7 +10,7 @@ export default function About() {
           <h2 className="text-2xl md:text-4xl text-white uppercase font-extrabold text-center xl:text-left">
             Estamos aquí para desarrollar tu próximo proyecto
           </h2>
-          <Typography className="text-white text-justify">
+          <Typography className="text-white text-justify z-40">
             Somos una empresa de software apasionada por transformar las ideas
             de nuestros clientes en realidad. Nuestro equipo de expertos en
             tecnología se dedica a desarrollar soluciones innovadoras y a
@@ -20,6 +20,16 @@ export default function About() {
         </div>
         <div className="w-full xl:w-[55%]">
           <CarouselAbout />
+        </div>
+      </div>
+      <div className="container-spinnings absolute left-[70%] top-[55%]">
+        <div className="hero-circle">
+          <div className="hero-rotate" id="circle">
+            <div className="planet" />
+            <div className="planet" />
+            <div className="planet" />
+            <div className="planet" />
+          </div>
         </div>
       </div>
       <div className="flex flex-col justify-center items-center pt-40">

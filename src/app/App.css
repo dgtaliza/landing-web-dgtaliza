@@ -870,3 +870,76 @@ html {
   /* Non-prefixed version, currently
 									supported by Chrome, Edge, Opera and Firefox */
 }
+
+/* Animations */
+
+.container-spinnings {
+  display: grid;
+  place-items: center;
+  --circleDiameter: 600px;
+  --planets: calc(var(--circleDiameter) / 5);
+}
+
+.hero-circle {
+  position: relative;
+  width: var(--circleDiameter);
+  height: var(--circleDiameter);
+}
+
+.hero-rotate {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 4px solid #4c4848;
+  border-radius: 100%;
+  animation: rotate 30s linear infinite;
+}
+
+.planet {
+  position: absolute;
+  width: var(--planets);
+  background-color: #4c4848;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  animation: maintain 30s linear infinite;
+}
+
+.planet:nth-child(1) {
+  top: calc(-1 * var(--planets) / 2);
+  left: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
+}
+
+.planet:nth-child(2) {
+  top: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
+  right: calc(-1 * var(--planets) / 2);
+}
+
+.planet:nth-child(3) {
+  top: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
+  left: calc(-1 * var(--planets) / 2);
+}
+
+.planet:nth-child(4) {
+  left: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
+  bottom: calc(-1 * var(--planets) / 2);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes maintain {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
