@@ -1,6 +1,9 @@
+/* Hide scroll bar */
 ::-webkit-scrollbar {
   display: none;
 }
+
+/* Loading */
 
 .loader-container {
   position: fixed;
@@ -135,13 +138,37 @@
   }
 }
 
-/* Background home */
+/* Background main */
 
-.background-dgtaliza {
-  background-image: url("/src/app/assets/img/background-dgitaliza.png");
+.bg-main {
   position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #0f1352;
+  overflow: hidden;
+}
+
+.bg-main::before,
+.bg-main::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.7;
+}
+
+.bg-main::before {
+  background-color: #f43ce4;
+  top: 500px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+}
+
+.bg-main::after {
+  background-color: #0c7cc4;
+  top: 20px;
+  right: -50px;
 }
 
 /* Section separator */
@@ -248,14 +275,14 @@ html {
 @media (max-width: 425px) {
   .swiper-button-prev {
     left: 20px;
-    width: 36px;
-    height: 36px;
+    width: 0px;
+    height: 0px;
   }
 
   .swiper-button-next {
     right: 10px;
-    width: 36px;
-    height: 36px;
+    width: 0px;
+    height: 0px;
   }
 }
 
@@ -263,31 +290,31 @@ html {
   .swiper-button-prev {
     left: 12px;
     top: 59%;
-    width: 36px;
-    height: 36px;
+    width: 0px;
+    height: 0px;
   }
 
   .swiper-button-next {
     right: 12px;
     top: 59%;
-    width: 36px;
-    height: 36px;
+    width: 0px;
+    height: 0px;
   }
 }
 
 @media (max-width: 320px) {
   .swiper-button-prev {
     left: 10px;
-    width: 28px;
+    width: 0px;
     top: 59%;
-    height: 28px;
+    height: 0px;
   }
 
   .swiper-button-next {
     right: 10px;
     top: 59%;
-    width: 28px;
-    height: 28px;
+    width: 0px;
+    height: 0px;
   }
 }
 
@@ -385,9 +412,133 @@ html {
   }
 }
 
+/* Clients */
+
+.bg-clients {
+  background-image: url("/src/app/assets/svg/circle-right.svg");
+  background-repeat: no-repeat;
+  background-size: 200%; /* Aumenta el tamaño del fondo */
+  background-position: center; /* Posiciona el fondo a la derecha */
+  width: 100vw; /* Asegura que el fondo cubra todo el ancho de la pantalla */
+  height: 120vh; /* Ajusta la altura del fondo para cubrir toda la altura de la pantalla */
+  overflow: hidden;
+  z-index: 0; /* Asegura que el fondo esté detrás del contenido */
+}
+
+/* Carousel clients */
+
+.slideOne img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slideOne {
+  transform: scale(0.2);
+  transition: transform 300ms;
+  opacity: 0.5;
+}
+
+.activeSlide {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.arrow {
+  position: absolute;
+  background-size: auto 100%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow-clients-left {
+  left: -5%;
+  top: 44%;
+  width: 56px;
+  height: 56px;
+}
+
+.arrow-clients-right {
+  right: -5%;
+  top: 44%;
+  width: 56px;
+  height: 56px;
+}
+
+@media (max-width: 1024px) {
+  .arrow-clients-left {
+    left: 0%;
+    width: 44px;
+    height: 44px;
+  }
+
+  .arrow-clients-right {
+    right: 0%;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  .arrow-clients-left {
+    left: 3%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .arrow-clients-right {
+    right: 3%;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 425px) {
+  .arrow-clients-left {
+    left: -5%;
+    width: 36px;
+    height: 36px;
+  }
+
+  .arrow-clients-right {
+    right: -5%;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 375px) {
+  .arrow-clients-left {
+    left: -5%;
+    width: 36px;
+    height: 36px;
+  }
+
+  .arrow-clients-right {
+    right: -5%;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 320px) {
+  .arrow-clients-left {
+    left: -5%;
+    width: 28px;
+    height: 28px;
+  }
+
+  .arrow-clients-right {
+    right: -5%;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Carousel clients animation */
+
 .container {
   position: relative;
-  width: 2000px;
+  width: 200px;
   height: 260px;
   transition: 200ms;
 }
@@ -395,13 +546,13 @@ html {
 #card {
   position: absolute;
   inset: 0;
+  width: 100%;
   z-index: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
-  transition: 300ms;
+  border-radius: 20px;
+  transition: 700ms;
 }
 
 .tracker:hover ~ #card .title {
@@ -471,7 +622,7 @@ html {
     rgb(200, 80, 192) 46%,
     rgb(255, 204, 112) 100%
   );
-  filter: blur(1rem);
+  filter: blur(2rem);
   opacity: 30%;
   width: 100%;
   height: 100%;
@@ -707,123 +858,88 @@ html {
 
 .noselect {
   -webkit-touch-callout: none;
+  /* iOS Safari */
   -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
   -moz-user-select: none;
+  /* Old versions of Firefox */
   -ms-user-select: none;
+  /* Internet Explorer/Edge */
   user-select: none;
+  /* Non-prefixed version, currently
+									supported by Chrome, Edge, Opera and Firefox */
 }
 
-.slideOne img {
+/* Animations */
+
+.container-spinnings {
+  display: grid;
+  place-items: center;
+  --circleDiameter: 600px;
+  --planets: calc(var(--circleDiameter) / 5);
+}
+
+.hero-circle {
+  position: relative;
+  width: var(--circleDiameter);
+  height: var(--circleDiameter);
+}
+
+.hero-rotate {
+  position: relative;
   width: 100%;
-  margin: 0 auto;
+  height: 100%;
+  border: 4px solid #4c4848;
+  border-radius: 100%;
+  animation: rotate 30s linear infinite;
 }
 
-.slideOne {
-  transform: scale(0.2);
-  transition: transform 300ms;
-  opacity: 0.5;
-}
-
-.activeSlide {
-  transform: scale(1.1);
-  opacity: 1;
-}
-
-.arrow {
+.planet {
   position: absolute;
-  background-size: auto 100%;
-  cursor: pointer;
-  z-index: 10;
+  width: var(--planets);
+  background-color: #4c4848;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  animation: maintain 30s linear infinite;
 }
 
-.arrow-clients-left {
-  left: -5%;
-  top: 50%;
-  width: 56px;
-  height: 56px;
+.planet:nth-child(1) {
+  top: calc(-1 * var(--planets) / 2);
+  left: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
 }
 
-.arrow-clients-right {
-  right: -5%;
-  top: 50%;
-  width: 56px;
-  height: 56px;
+.planet:nth-child(2) {
+  top: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
+  right: calc(-1 * var(--planets) / 2);
 }
 
-@media (max-width: 1024px) {
-  .arrow-clients-left {
-    left: -0%;
-    top: 50%;
-    width: 44px;
-    height: 44px;
+.planet:nth-child(3) {
+  top: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
+  left: calc(-1 * var(--planets) / 2);
+}
+
+.planet:nth-child(4) {
+  left: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
+  bottom: calc(-1 * var(--planets) / 2);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
   }
 
-  .arrow-clients-right {
-    right: -0%;
-    top: 50%;
-    width: 44px;
-    height: 44px;
-  }
-}
-
-@media (max-width: 768px) {
-  .arrow-clients-left {
-    left: -40px;
-    top: 50%;
-    width: 40px;
-    height: 40px;
-  }
-
-  .arrow-clients-right {
-    right: -40px;
-    top: 50%;
-    width: 40px;
-    height: 40px;
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-@media (max-width: 425px) {
-  .arrow-clients-left {
-    left: -15%;
-    top: 50%;
-    width: 36px;
-    height: 36px;
+@keyframes maintain {
+  0% {
+    transform: rotate(0);
   }
 
-  .arrow-clients-right {
-    right: -15%;
-    top: 50%;
-    width: 36px;
-    height: 36px;
-  }
-}
-
-@media (max-width: 375px) {
-  .arrow-clients-left {
-    left: 0%;
-    width: 36px;
-    height: 36px;
-  }
-
-  .arrow-clients-right {
-    right: 260px;
-    width: 36px;
-    height: 36px;
-  }
-}
-
-@media (max-width: 320px) {
-  .arrow-clients-left {
-    left: -40px;
-    top: 50%;
-    width: 28px;
-    height: 28px;
-  }
-
-  .arrow-clients-right {
-    right: -40px;
-    top: 50%;
-    width: 28px;
-    height: 28px;
+  100% {
+    transform: rotate(-360deg);
   }
 }
