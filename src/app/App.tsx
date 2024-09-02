@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
-import { Hidden } from "@mui/material";
+import { Suspense, lazy } from "react";
+import { useDevices } from "./utils";
 import Clients from "./sections/clients/Clients";
 import Header from "./components/header/Header";
-import Home from "./sections/home/Home";
 import Services from "./sections/services/Services";
 import About from "./sections/about/About";
 import Footer from "./components/footer/Footer";
@@ -14,36 +13,25 @@ import "slick-carousel/slick/slick-theme.css";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./App.css";
 
+const Home = lazy(() => import("./sections/home/Home"));
+
+
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <Loading />;
-  }
+  const { isMobile } = useDevices();
 
   return (
     <div className="bg-main">
-      <Hidden mdDown>
-        <Header />
-      </Hidden>
-      <Hidden mdUp>
-        <SmallHeader />
-      </Hidden>
+      {isMobile ? <SmallHeader /> : <Header />}
+
       <ScrollAnimation>
-        <Home />
+        <Suspense fallback={<Loading />}>
+          <Home />
+        </Suspense>
         <Services />
         <Clients />
         <About />
-        <Footer />
       </ScrollAnimation>
+      <Footer />
     </div>
   );
 }
