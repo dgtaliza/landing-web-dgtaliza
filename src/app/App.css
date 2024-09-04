@@ -138,13 +138,37 @@
   }
 }
 
-/* Background home */
+/* Background main */
 
-.background-dgtaliza {
-  background-image: url("/src/app/assets/img/background-dgitaliza.png");
+.bg-main {
   position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #0f1352;
+  overflow: hidden;
+}
+
+.bg-main::before,
+.bg-main::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.7;
+}
+
+.bg-main::before {
+  background-color: #f43ce4;
+  top: 500px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+}
+
+.bg-main::after {
+  background-color: #0c7cc4;
+  top: 20px;
+  right: -50px;
 }
 
 /* Section separator */
@@ -251,14 +275,14 @@ html {
 @media (max-width: 425px) {
   .swiper-button-prev {
     left: 20px;
-    width: 36px;
-    height: 36px;
+    width: 0px;
+    height: 0px;
   }
 
   .swiper-button-next {
     right: 10px;
-    width: 36px;
-    height: 36px;
+    width: 0px;
+    height: 0px;
   }
 }
 
@@ -266,31 +290,31 @@ html {
   .swiper-button-prev {
     left: 12px;
     top: 59%;
-    width: 36px;
-    height: 36px;
+    width: 0px;
+    height: 0px;
   }
 
   .swiper-button-next {
     right: 12px;
     top: 59%;
-    width: 36px;
-    height: 36px;
+    width: 0px;
+    height: 0px;
   }
 }
 
 @media (max-width: 320px) {
   .swiper-button-prev {
     left: 10px;
-    width: 28px;
+    width: 0px;
     top: 59%;
-    height: 28px;
+    height: 0px;
   }
 
   .swiper-button-next {
     right: 10px;
     top: 59%;
-    width: 28px;
-    height: 28px;
+    width: 0px;
+    height: 0px;
   }
 }
 
@@ -388,20 +412,141 @@ html {
   }
 }
 
-/* Carousel clients animation */
+/* Clients */
 
-/* .container {
-  position: relative;
-  width: 1200px;
-  height: 280px;
-  transition: 200ms;
+.bg-clients {
+  background-image: url("/src/app/assets/svg/circle-right.svg");
+  background-repeat: no-repeat;
+  background-size: 200%; /* Aumenta el tamaño del fondo */
+  background-position: center; /* Posiciona el fondo a la derecha */
+  width: 100vw; /* Asegura que el fondo cubra todo el ancho de la pantalla */
+  height: 120vh; /* Ajusta la altura del fondo para cubrir toda la altura de la pantalla */
   overflow: hidden;
+  z-index: 0; /* Asegura que el fondo esté detrás del contenido */
 }
 
+/* Carousel clients */
+
+.slideOne img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slideOne {
+  transform: scale(0.2);
+  transition: transform 300ms;
+  opacity: 0.5;
+}
+
+.activeSlide {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.arrow {
+  position: absolute;
+  background-size: auto 100%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow-clients-left {
+  left: -5%;
+  top: 44%;
+  width: 56px;
+  height: 56px;
+}
+
+.arrow-clients-right {
+  right: -5%;
+  top: 44%;
+  width: 56px;
+  height: 56px;
+}
+
+@media (max-width: 1024px) {
+  .arrow-clients-left {
+    left: 0%;
+    width: 44px;
+    height: 44px;
+  }
+
+  .arrow-clients-right {
+    right: 0%;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  .arrow-clients-left {
+    left: 3%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .arrow-clients-right {
+    right: 3%;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 425px) {
+  .arrow-clients-left {
+    left: -5%;
+    width: 36px;
+    height: 36px;
+  }
+
+  .arrow-clients-right {
+    right: -5%;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 375px) {
+  .arrow-clients-left {
+    left: -5%;
+    width: 36px;
+    height: 36px;
+  }
+
+  .arrow-clients-right {
+    right: -5%;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 320px) {
+  .arrow-clients-left {
+    left: -5%;
+    width: 28px;
+    height: 28px;
+  }
+
+  .arrow-clients-right {
+    right: -5%;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Carousel clients animation */
+
+.container {
+  position: relative;
+  width: 200px;
+  height: 260px;
+  transition: 200ms;
+}
 
 #card {
   position: absolute;
   inset: 0;
+  width: 100%;
   z-index: 0;
   display: flex;
   justify-content: center;
@@ -477,324 +622,6 @@ html {
     rgb(200, 80, 192) 46%,
     rgb(255, 204, 112) 100%
   );
-  filter: blur(2rem);
-  opacity: 30%;
-  width: 80%;
-  height: 120px;
-  position: absolute;
-  z-index: -1;
-  transition: 200ms;
-}
-
-.tr-1 {
-  grid-area: tr-1;
-}
-
-.tr-2 {
-  grid-area: tr-2;
-}
-
-.tr-3 {
-  grid-area: tr-3;
-}
-
-.tr-4 {
-  grid-area: tr-4;
-}
-
-.tr-5 {
-  grid-area: tr-5;
-}
-
-.tr-6 {
-  grid-area: tr-6;
-}
-
-.tr-7 {
-  grid-area: tr-7;
-}
-
-.tr-8 {
-  grid-area: tr-8;
-}
-
-.tr-9 {
-  grid-area: tr-9;
-}
-
-.tr-10 {
-  grid-area: tr-10;
-}
-
-.tr-11 {
-  grid-area: tr-11;
-}
-
-.tr-12 {
-  grid-area: tr-12;
-}
-
-.tr-13 {
-  grid-area: tr-13;
-}
-
-.tr-14 {
-  grid-area: tr-14;
-}
-
-.tr-15 {
-  grid-area: tr-15;
-}
-
-.tr-16 {
-  grid-area: tr-16;
-}
-
-.tr-17 {
-  grid-area: tr-17;
-}
-
-.tr-18 {
-  grid-area: tr-18;
-}
-
-.tr-19 {
-  grid-area: tr-19;
-}
-
-.tr-20 {
-  grid-area: tr-20;
-}
-
-.tr-21 {
-  grid-area: tr-21;
-}
-
-.tr-22 {
-  grid-area: tr-22;
-}
-
-.tr-23 {
-  grid-area: tr-23;
-}
-
-.tr-24 {
-  grid-area: tr-24;
-}
-
-.tr-25 {
-  grid-area: tr-25;
-}
-
-.tr-1:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(20deg) rotateY(-10deg) rotateZ(0deg);
-}
-
-.tr-2:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(20deg) rotateY(-5deg) rotateZ(0deg);
-}
-
-.tr-3:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg);
-}
-
-.tr-4:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(20deg) rotateY(5deg) rotateZ(0deg);
-}
-
-.tr-5:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(20deg) rotateY(10deg) rotateZ(0deg);
-}
-
-.tr-6:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(10deg) rotateY(-10deg) rotateZ(0deg);
-}
-
-.tr-7:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(10deg) rotateY(-5deg) rotateZ(0deg);
-}
-
-.tr-8:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg);
-}
-
-.tr-9:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(10deg) rotateY(5deg) rotateZ(0deg);
-}
-
-.tr-10:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(10deg) rotateY(10deg) rotateZ(0deg);
-}
-
-.tr-11:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(0deg) rotateY(-10deg) rotateZ(0deg);
-}
-
-.tr-12:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(0deg) rotateY(-5deg) rotateZ(0deg);
-}
-
-.tr-13:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-}
-
-.tr-14:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(0deg) rotateY(5deg) rotateZ(0deg);
-}
-
-.tr-15:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(0deg) rotateY(10deg) rotateZ(0deg);
-}
-
-.tr-16:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(-10deg) rotateY(-10deg) rotateZ(0deg);
-}
-
-.tr-17:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(-10deg) rotateY(-5deg) rotateZ(0deg);
-}
-
-.tr-18:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(-10deg) rotateY(0deg) rotateZ(0deg);
-}
-
-.tr-19:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(-10deg) rotateY(5deg) rotateZ(0deg);
-}
-
-.tr-20:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(-10deg) rotateY(10deg) rotateZ(0deg);
-}
-
-.tr-21:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(-20deg) rotateY(-10deg) rotateZ(0deg);
-}
-
-.tr-22:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(-20deg) rotateY(-5deg) rotateZ(0deg);
-}
-
-.tr-23:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
-}
-
-.tr-24:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(-20deg) rotateY(5deg) rotateZ(0deg);
-}
-
-.tr-25:hover ~ #card {
-  transition: 125ms ease-in-out;
-  transform: rotateX(-20deg) rotateY(10deg) rotateZ(0deg);
-}
-
-*/
-
-.container {
-  position: relative;
-  width: 200px;
-  height: 260px;
-  transition: 200ms;
-}
-
-
-
-#card {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  z-index: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  transition: 700ms;
-}
-
-.tracker:hover ~ #card .title {
-  opacity: 1;
-}
-
-#prompt {
-  bottom: 8px;
-  left: 12px;
-  z-index: 20;
-  font-size: 20px;
-  font-weight: bold;
-  transition: 300ms ease-in-out-out;
-  position: absolute;
-  max-width: 110px;
-  color: rgb(255, 255, 255);
-}
-
-.tracker {
-  position: absolute;
-  z-index: 200;
-  width: 100%;
-  height: 100%;
-}
-
-.tracker:hover {
-  cursor: pointer;
-}
-
-.tracker:hover ~ #card #prompt {
-  opacity: 0;
-}
-
-.tracker:hover ~ #card {
-  transition: 300ms;
-  filter: brightness(1.1);
-}
-
-.container:hover #card::before {
-  transition: 200ms;
-  content: '';
-  opacity: 80%;
-}
-
-.canvas {
-  perspective: 800px;
-  inset: 0;
-  z-index: 200;
-  position: absolute;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas: "tr-1 tr-2 tr-3 tr-4 tr-5"
-    "tr-6 tr-7 tr-8 tr-9 tr-10"
-    "tr-11 tr-12 tr-13 tr-14 tr-15"
-    "tr-16 tr-17 tr-18 tr-19 tr-20"
-    "tr-21 tr-22 tr-23 tr-24 tr-25";
-}
-
-#card::before {
-  content: '';
-  background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
   filter: blur(2rem);
   opacity: 30%;
   width: 100%;
@@ -1031,131 +858,73 @@ html {
 
 .noselect {
   -webkit-touch-callout: none;
-   /* iOS Safari */
+  /* iOS Safari */
   -webkit-user-select: none;
-   /* Safari */
-   /* Konqueror HTML */
+  /* Safari */
+  /* Konqueror HTML */
   -moz-user-select: none;
-   /* Old versions of Firefox */
+  /* Old versions of Firefox */
   -ms-user-select: none;
-   /* Internet Explorer/Edge */
+  /* Internet Explorer/Edge */
   user-select: none;
-   /* Non-prefixed version, currently
+  /* Non-prefixed version, currently
 									supported by Chrome, Edge, Opera and Firefox */
 }
-/* Carousel clients */
 
-.slideOne img {
-  width: 100%;
-  margin: 0 auto;
+/* Animations cricles */
+
+.container-spinnings {
+  display: grid;
+  place-items: center;
+  --circleDiameter: 600px;
+  --outerDiameter: 800px; /* Nuevo tamaño para el círculo externo */
+  --planets: calc(var(--circleDiameter) / 8);
 }
 
-.slideOne {
-  transform: scale(0.2);
-  transition: transform 300ms;
-  opacity: 0.5;
+.outer-circle {
+  position: relative;
+  width: var(--outerDiameter);
+  height: var(--outerDiameter);
+  border: 4px solid #5c5c54;
+  border-radius: 100%;
 }
 
-.activeSlide {
-  transform: scale(1.1);
-  opacity: 1;
-}
-
-.arrow {
+.hero-circle {
   position: absolute;
-  background-size: auto 100%;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.arrow-clients-left {
-  left: -5%;
   top: 50%;
-  width: 56px;
-  height: 56px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--circleDiameter);
+  height: var(--circleDiameter);
+  border: 4px solid #5c5c54; /* Borde y radio como el círculo externo */
+  border-radius: 100%; /* Hace que el círculo sea redondo */
 }
 
-.arrow-clients-right {
-  right: -5%;
-  top: 50%;
-  width: 56px;
-  height: 56px;
+.planet {
+  position: absolute;
+  width: var(--planets);
+  background-color: #5c5c54;
+  aspect-ratio: 1;
+  border-radius: 100%;
 }
 
-@media (max-width: 1024px) {
-  .arrow-clients-left {
-    left: -0%;
-    top: 50%;
-    width: 44px;
-    height: 44px;
-  }
-
-  .arrow-clients-right {
-    right: -0%;
-    top: 50%;
-    width: 44px;
-    height: 44px;
-  }
+.planet:nth-child(1) {
+  top: calc(-1 * var(--planets) / 2);
+  left: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
 }
 
-@media (max-width: 768px) {
-  .arrow-clients-left {
-    left: -40px;
-    top: 50%;
-    width: 40px;
-    height: 40px;
-  }
-
-  .arrow-clients-right {
-    right: -40px;
-    top: 50%;
-    width: 40px;
-    height: 40px;
-  }
+.planet:nth-child(2) {
+  top: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
+  right: calc(-1 * var(--planets) / 2);
 }
 
-@media (max-width: 425px) {
-  .arrow-clients-left {
-    left: -15%;
-    top: 50%;
-    width: 36px;
-    height: 36px;
-  }
-
-  .arrow-clients-right {
-    right: -15%;
-    top: 50%;
-    width: 36px;
-    height: 36px;
-  }
+.planet:nth-child(3) {
+  top: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
+  left: calc(-1 * var(--planets) / 2);
 }
 
-@media (max-width: 375px) {
-  .arrow-clients-left {
-    left: 0%;
-    width: 36px;
-    height: 36px;
-  }
-
-  .arrow-clients-right {
-    right: 260px;
-    width: 36px;
-    height: 36px;
-  }
+.planet:nth-child(4) {
+  left: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
+  bottom: calc(-1 * var(--planets) / 2);
 }
 
-@media (max-width: 320px) {
-  .arrow-clients-left {
-    left: -40px;
-    top: 50%;
-    width: 28px;
-    height: 28px;
-  }
-
-  .arrow-clients-right {
-    right: -40px;
-    top: 50%;
-    width: 28px;
-    height: 28px;
-  }
-}
