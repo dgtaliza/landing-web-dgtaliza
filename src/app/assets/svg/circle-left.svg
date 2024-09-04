@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Capa_8" viewBox="0 0 6121.4 5661.65">
+    <defs>
+        <style>
+            .cls-1 {
+            fill: none;
+            }
+
+            .cls-1, .cls-2 {
+            stroke: #3f3f3c;
+            stroke-miterlimit: 10;
+            stroke-width: 2px;
+            }
+
+            .cls-2 {
+            fill: #3f3f3c;
+            }
+        </style>
+    </defs>
+    <circle class="cls-1" cx="2382.86" cy="3226.31" r="471.83" />
+    <circle class="cls-1" cx="2396.15" cy="3229.39" r="313.55" />
+    <circle class="cls-2" cx="1908.95" cy="3241.23" r="25.49" />
+    <circle class="cls-2" cx="2388.98" cy="2914.31" r="24.51" />
+    <circle class="cls-2" cx="2459.45" cy="3693.54" r="29.62" />
+</svg>

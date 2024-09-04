@@ -1,10 +1,10 @@
-import { memo, useState } from "react";
+import { useState } from "react";
 import { AppBar, IconButton } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import MenuIcon from '@mui/icons-material/Menu';
 import logoWhite from "../../assets/img/logo-dgtaliza-white.png";
 import MenuDrawer from "../menuheader/MenuHeader";
 
-export default memo(function SmallHeader() {
+export default function SmallHeader() {
   const [openMenuDrawer, setOpenMenuDrawer] = useState(false);
 
   const handleOpenMenuDrawer = () => {
@@ -34,4 +34,4 @@ export default memo(function SmallHeader() {
       </div>
     </AppBar>
   );
-});
+}

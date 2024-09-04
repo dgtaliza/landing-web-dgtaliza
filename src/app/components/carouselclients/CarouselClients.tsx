@@ -3,13 +3,14 @@ import Slider, { Settings } from "react-slick";
 import ArrowRight from "../arrowright/ArrowRight";
 import ArrowLeft from "../arrowleft/ArrowLeft";
 
-const images = [
-  { img: "devstiven", link: "https://devstiven.netlify.app/" },
-  { img: "codeleo", link: "https://codeleo.vercel.app/" },
-  { img: "leon", link: "https://github.com/Leon-Flor" },
-  { img: "devstiven", link: "https://devstiven.netlify.app/" },
-  { img: "codeleo", link: "https://codeleo.vercel.app/" },
-  { img: "leon", link: "https://github.com/Leon-Flor" },
+// Define the clients and their corresponding links
+const clients = [
+  { image: "devstiven", link: "https://devstiven.netlify.app/" },
+  { image: "codeleo", link: "https://codeleo.vercel.app/" },
+  { image: "leon", link: "https://github.com/Leon-Flor" },
+  { image: "devstiven", link: "https://devstiven.netlify.app/" },
+  { image: "codeleo", link: "https://codeleo.vercel.app/" },
+  { image: "leon", link: "https://github.com/Leon-Flor" },
 ];
 
 export default function CarouselClients() {
@@ -18,11 +19,10 @@ export default function CarouselClients() {
   const settings: Settings = {
     infinite: true,
     lazyLoad: "ondemand",
-    speed: 300,
+    speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: "0px",
     nextArrow: <ArrowRight />,
     prevArrow: <ArrowLeft />,
     beforeChange: (_current: number, next: number) => setImageIndex(next),
@@ -31,19 +31,17 @@ export default function CarouselClients() {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
+          slidesToScroll: 3,
           infinite: true,
-          centerPadding: "0px",
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToShow: 3,
+          slidesToScroll: 2,
           initialSlide: 2,
           infinite: true,
-          centerPadding: "0px",
         },
       },
       {
@@ -52,22 +50,22 @@ export default function CarouselClients() {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          centerPadding: "0px",
+          arrows: false,
         },
       },
     ],
   };
 
   return (
-    <section className="py-32">
-      <Slider {...settings} draggable={false}>
-        {images.map((item, idx) => (
+    <div>
+      <Slider {...settings} draggable={false} autoplay>
+        {clients.map((item, idx) => (
           <div
             key={idx}
             className={idx === imageIndex ? "slideOne activeSlide" : "slideOne"}
           >
             <a href={item.link} target="_blank" rel="noopener noreferrer">
-              <div className="container noselect my-20">
+              <div className="container noselect my-24">
                 <div className="canvas">
                   <div className="tracker tr-1"></div>
                   <div className="tracker tr-2"></div>
@@ -96,12 +94,12 @@ export default function CarouselClients() {
                   <div className="tracker tr-25"></div>
                   <div id="card">
                     <img
-                      className="rounded-xl"
+                      className="rounded-3xl"
                       src={`${import.meta.env.VITE_DIST_IMGS}/clients/${
-                        item.img
+                        item.image
                       }.webp`}
-                      loading="lazy"
                       alt={`Slide ${idx}`}
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -110,6 +108,6 @@ export default function CarouselClients() {
           </div>
         ))}
       </Slider>
-    </section>
+    </div>
   );
 }
