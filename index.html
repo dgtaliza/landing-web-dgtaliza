@@ -2,31 +2,114 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/app/assets/svg/dgtaliza-favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dgtaliza</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      charset="UTF-8"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Dgtaliza - Digital Solutions for the Modern World. We offer top-notch services in web development, digital marketing, and more."
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+    <meta
+      name="keywords"
+      content="Dgtaliza, digital solutions, web development, digital marketing, SEO, modern design"
     />
+    <meta name="author" content="Dgtaliza" />
+    <meta
+      property="og:title"
+      content="Dgtaliza - Digital Solutions for the Modern World"
+    />
+    <meta
+      property="og:description"
+      content="Offering top-notch services in web development, digital marketing, and more."
+    />
+    <meta
+      property="og:image"
+      content="/src/app/assets/images/dgtaliza-og-image.png"
+    />
+    <meta property="og:url" content="https://dgtaliza.com/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Dgtaliza - Digital Solutions for the Modern World"
+    />
+    <meta
+      name="twitter:description"
+      content="Offering top-notch services in web development, digital marketing, and more."
+    />
+    <meta
+      name="twitter:image"
+      content="/src/app/assets/images/dgtaliza-twitter-image.png"
+    />
+
+    <meta
+      property="og:title"
+      lang="es"
+      content="Dgtaliza - Soluciones digitales para el mundo moderno"
+    />
+    <meta
+      property="og:description"
+      lang="es"
+      content="Ofrecemos servicios de alta calidad en desarrollo web, marketing digital y m s."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="svg/dgtaliza-favicon.svg" />
+
+    <!-- Title -->
+    <title>Dgtaliza - Digital Solutions for the Modern World</title>
+
+    <!-- Preconnect for Performance Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Bungee&family=Gabarito:wght@400..900&display=swap"
       rel="stylesheet"
     />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Slick Carousel CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+    />
+
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Dgtaliza",
+        "url": "https://dgtaliza.com",
+        "logo": "/src/app/assets/svg/dgtaliza-favicon.svg",
+        "sameAs": [
+          "https://www.facebook.com/Dgtaliza",
+          "https://twitter.com/Dgtaliza",
+          "https://www.linkedin.com/company/dgtaliza"
+        ]
+      }
+    </script>
   </head>
   <body>
+    <!-- Main React Container -->
     <div id="root"></div>
+
+    <!-- Vite Script -->
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- AOS (Animate On Scroll) Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

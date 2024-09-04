@@ -41,7 +41,7 @@ function Header() {
         target="_blank"
       >
         <p className="text-base text-white font-bold uppercase bg-[#719EFF] border border-[#719EFF] hover:border-white hover:bg-transparent px-8 py-4 rounded-md transition duration-300">
-          Contácto
+          Contacto
         </p>
       </a>
     </AppBar>
