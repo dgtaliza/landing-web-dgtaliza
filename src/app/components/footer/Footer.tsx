@@ -44,7 +44,7 @@ export default function Footer() {
           Escríbenos
         </h2>
         <a
-          href="mailto:info@dgtaliza.com"
+          href="https://mail.google.com/mail/u/0/?fs=1&to=info@dgtaliza.com&tf=cm"
           className="text-white pt-8 hover:underline"
         >
           <span className="font-sans">info@dgtaliza.com</span>

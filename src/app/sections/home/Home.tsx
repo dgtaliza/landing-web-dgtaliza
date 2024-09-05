@@ -1,4 +1,5 @@
 import Sectionseparator from "../../components/sectionseparator/Sectionseparator";
+import codingInterface from "../../assets/img/coding-editing-interface.png";
 
 export default function Home() {
   return (
@@ -31,7 +32,7 @@ export default function Home() {
           data-aos="zoom-in"
         >
           <img
-            src={`${import.meta.env.VITE_DIST_IMGS}/home/home.webp`}
+            src={codingInterface}
             alt="coding-editing-interface"
             loading="lazy"
             className="w-[60%] w-auto animate-pulse"

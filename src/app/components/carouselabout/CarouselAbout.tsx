@@ -1,5 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import experiencie from "../../assets/img/about/experiencie.png";
+import innovation from "../../assets/img/about/inovation.png";
+import quality from "../../assets/img/about/quality.png";
+import support from "../../assets/img/about/support.png";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -7,7 +11,7 @@ import "swiper/css/navigation";
 const storiesData = [
   {
     id: 1,
-    image: "experiencie",
+    image: experiencie,
     backgroundColorType: "#6588FE",
     title: "Experiencia",
     description:
@@ -15,7 +19,7 @@ const storiesData = [
   },
   {
     id: 2,
-    image: "inovation",
+    image: innovation,
     backgroundColorType: "#E7CD45",
     title: "Innovación",
     description:
@@ -23,7 +27,7 @@ const storiesData = [
   },
   {
     id: 3,
-    image: "quality",
+    image: quality,
     backgroundColorType: "#52D9EF",
     title: "Calidad",
     description:
@@ -31,7 +35,7 @@ const storiesData = [
   },
   {
     id: 4,
-    image: "support",
+    image: support,
     backgroundColorType: "#6588FE",
     title: "Soporte",
     description:
@@ -81,9 +85,7 @@ export default function CarouselAbout() {
                 <div className="flex justify-center items-center h-full w-full py-4">
                   <img
                     className="w-32 md:w-40 mb-10 rounded-t-lg object-cover object-center "
-                    src={`${import.meta.env.VITE_DIST_IMGS}/about/${
-                      item.image
-                    }.webp`}
+                    src={item.image}
                     alt="imageAbout"
                     loading="lazy"
                   />
