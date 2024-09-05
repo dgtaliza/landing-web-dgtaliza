@@ -1,5 +1,5 @@
 import Sectionseparator from "../../components/sectionseparator/Sectionseparator";
-import codingInterface from "../../assets/img/coding-editing-interface.png";
+import codingInterface from "../../assets/img/coding-rditing-interface.png";
 
 export default function Home() {
   return (
