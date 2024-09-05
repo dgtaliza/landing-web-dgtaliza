@@ -105,7 +105,8 @@ export default function MenuDrawer({
           
               fontSize: 16,
             }}
-            href="#contact"
+            href="https://api.whatsapp.com/send?phone=573225331967"
+        target="_blank"
           >
             Contáctanos
           </Button>
