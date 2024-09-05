@@ -1,16 +1,18 @@
 import { useState } from "react";
 import Slider, { Settings } from "react-slick";
+import devStiven from "../../assets/img/clients/devstiven.jpg";
+import codeLeo from "../../assets/img/clients/codeleo.jpg";
+import leon from "../../assets/img/clients/leon.jpg";
 import ArrowRight from "../arrowright/ArrowRight";
 import ArrowLeft from "../arrowleft/ArrowLeft";
 
-// Define the clients and their corresponding links
 const clients = [
-  { image: "devstiven", link: "https://devstiven.netlify.app/" },
-  { image: "codeleo", link: "https://codeleo.vercel.app/" },
-  { image: "leon", link: "https://github.com/Leon-Flor" },
-  { image: "devstiven", link: "https://devstiven.netlify.app/" },
-  { image: "codeleo", link: "https://codeleo.vercel.app/" },
-  { image: "leon", link: "https://github.com/Leon-Flor" },
+  { image: devStiven, link: "https://devstiven.netlify.app/" },
+  { image: codeLeo, link: "https://codeleo.vercel.app/" },
+  { image: leon, link: "https://github.com/Leon-Flor" },
+  { image: devStiven, link: "https://devstiven.netlify.app/" },
+  { image: codeLeo, link: "https://codeleo.vercel.app/" },
+  { image: leon, link: "https://github.com/Leon-Flor" },
 ];
 
 export default function CarouselClients() {
@@ -95,9 +97,7 @@ export default function CarouselClients() {
                   <div id="card">
                     <img
                       className="rounded-3xl"
-                      src={`${import.meta.env.VITE_DIST_IMGS}/clients/${
-                        item.image
-                      }.webp`}
+                      src={item.image}
                       alt={`Slide ${idx}`}
                       loading="lazy"
                     />
