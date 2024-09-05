@@ -2,7 +2,7 @@ import logoWhite from "../../assets/img/logo-dgtaliza-white.png";
 
 export default function Footer() {
   return (
-    <div className="px-8 xl:px-40 py-20 flex flex-col xl:flex-row justify-between xl:items-start gap-10">
+    <div id="footer" className="px-8 xl:px-40 py-20 flex flex-col xl:flex-row justify-between xl:items-start gap-10">
       <div className="flex flex-col items-start">
         <a href="/">
           <img src={logoWhite} alt="logo-dgtaliza-white" className="w-40" />
