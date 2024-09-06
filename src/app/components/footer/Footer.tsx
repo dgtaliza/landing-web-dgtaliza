@@ -45,6 +45,8 @@ export default function Footer() {
         </h2>
         <a
           href="https://mail.google.com/mail/u/0/?fs=1&to=info@dgtaliza.com&tf=cm"
+          target="_blank"
+          rel="noreferrer"
           className="text-white pt-8 hover:underline"
         >
           <span className="font-sans">info@dgtaliza.com</span>
