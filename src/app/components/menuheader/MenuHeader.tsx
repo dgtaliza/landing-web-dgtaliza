@@ -71,7 +71,7 @@ export default function MenuDrawer({
           
               fontSize: 16,
             }}
-            href="#about"
+            href="#clients"
           >
             Clientes
           </Button>
