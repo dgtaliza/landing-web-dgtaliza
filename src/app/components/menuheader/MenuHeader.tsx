@@ -71,6 +71,23 @@ export default function MenuDrawer({
           
               fontSize: 16,
             }}
+            href="#team"
+          >
+            Equipo
+          </Button>
+          <div
+            style={{
+              color: "black",
+              width: "100%",
+              borderBottom: "2px solid",
+            }}
+          />
+          <Button
+            sx={{
+              color: "black",
+          
+              fontSize: 16,
+            }}
             href="#clients"
           >
             Clientes

@@ -1,5 +1,9 @@
 import Sectionseparator from "../../components/sectionseparator/Sectionseparator";
 import codingInterface from "../../assets/img/coding-rditing-interface.png";
+import Services from "../services/Services";
+import Team from "../team/Team";
+import Clients from "../clients/Clients";
+import About from "../about/About";
 
 export default function Home() {
   return (
@@ -40,6 +44,10 @@ export default function Home() {
         </div>
       </div>
       <Sectionseparator />
+      <Services />
+      <Team />
+      <Clients />
+      <About />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { services } from '../../data';
 
 function Sectionseparator() {
   return (
-    <div>
+    <div className='mt-24'>
       <div className="w-full overflow-hidden bg-black p-8 whitespace-nowrap slides uppercase relative">
         <div className="inline-block text-3xl slide">
           {services.map((service) => (
