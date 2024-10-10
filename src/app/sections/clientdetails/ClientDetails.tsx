@@ -6,16 +6,17 @@ const clients = [
     id: 1,
     name: "Cinthia Valenzuela",
     description:
-      "Cinthia Valenzuela es una tienda virtual especializada en la venta de jeans de alta calidad. Ofrecen una amplia gama de estilos y tallas para satisfacer las necesidades y gustos de sus clientes, destacándose por su enfoque en la comodidad y el diseño moderno. Su compromiso es proporcionar prendas que realcen la figura y sean duraderas, ofreciendo siempre la mejor experiencia de compra en línea.",
+      "Cinthia Valenzuela se destaca como una tienda online que ofrece una selección premium de jeans. Con una amplia variedad de estilos y tallas, la tienda está comprometida a satisfacer las preferencias de sus clientes, priorizando tanto la comodidad como las últimas tendencias de diseño. Cada prenda está diseñada para resaltar la figura y garantizar una durabilidad excepcional, haciendo de cada compra una experiencia óptima.",
+
     link: "https://cinthiavalenzuela.com/",
     image:
-      "https://cinthiavalenzuela.com/cdn/shop/files/carousel-first-image.png?v=1728259174&width=3000",
+      "https://cinthiavalenzuela.com/cdn/shop/files/WhatsApp_Image_2024-10-09_at_00.52.50.jpg?v=1728507029&width=3000",
   },
   {
     id: 2,
     name: "Vitrialuminios",
     description:
-      "Vitrialuminios es una empresa especializada en acabados de alta calidad en aluminio y vidrio, ofreciendo soluciones personalizadas para balcones, vitrinas, fachadas, puertas, ventanas, y más. Con un equipo de expertos en el manejo de materiales, garantizan durabilidad y elegancia en cada proyecto, adaptándose a las necesidades tanto de espacios residenciales como comerciales.",
+      "Vitrialuminios se especializa en brindar soluciones innovadoras y personalizadas en el ámbito del aluminio y vidrio. Con un enfoque en proyectos que incluyen balcones, fachadas, puertas y ventanas, la empresa garantiza acabados de primera calidad. Su equipo de expertos asegura no solo elegancia sino también durabilidad, adaptándose a las exigencias de tanto espacios residenciales como comerciales.",
     link: "https://vitrialuminios.com/",
     image:
       "https://d227sxcqqqmt48.cloudfront.net/public/vitrialuminios-about.jpg",
@@ -38,7 +39,7 @@ export default function ClientDetails() {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-16 text-justify mt-16">
         <div className="flex flex-col items-center gap-4 z-40">
-          <p className="mt-6 text-lg text-white normal-case">
+          <p className="description mt-6 text-lg text-white normal-case">
             {client.description}
           </p>
           <a
