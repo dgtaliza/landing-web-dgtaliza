@@ -1,15 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import devStiven from "../../assets/img/clients/client-cinthiavalenzuela.png";
-import codeLeo from "../../assets/img/clients/client-vitrialuminios.png";
+import cinthiaValenzuela from "../../assets/img/clients/client-cinthiavalenzuela.png";
+import vitrialuminios from "../../assets/img/clients/client-vitrialuminios.png";
 
 const clients = [
   {
     id: 1,
-    image: devStiven,
-    name: "Stiven",
+    image: cinthiaValenzuela,
     link: "https://cinthiavalenzuela.com/",
   },
-  { id: 2, image: codeLeo, name: "Leo", link: "https://vitrialuminios.com/" },
+  { id: 2, image: vitrialuminios, link: "https://vitrialuminios.com/" },
 ];
 
 export default function Clients() {
@@ -31,7 +30,7 @@ export default function Clients() {
               className="w-full rounded-3xl hover:scale-105 ease-out transition duration-500 cursor-pointer"
               src={item.image}
               alt="client-image"
-              onClick={() => handleClientClick(item.id)} 
+              onClick={() => handleClientClick(item.id)}
             />
           </div>
         ))}

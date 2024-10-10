@@ -928,3 +928,9 @@ html {
   bottom: calc(-1 * var(--planets) / 2);
 }
 
+/* Clients details */
+
+.description {
+  font-family: "Gabarito", sans-serif;
+  font-size: 30px;
+}
